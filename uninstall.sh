@@ -26,6 +26,7 @@ echo -e "${RED_COLOR}==================================================${NO_COLO
 echo -e "\n${LIGHT_BLUE_COLOR}[STEP 1/7]${NO_COLOR} Terminating active services (Caddy, Hysteria and 3x-ui)..."
 systemctl stop caddy hysteria-server x-ui 2>/dev/null
 systemctl disable caddy hysteria-server x-ui 2>/dev/null
+pkill -9 x-ui 2>/dev/null
 
 # --- STEP 2 ---
 echo -e "\n${LIGHT_BLUE_COLOR}[STEP 2/7]${NO_COLOR} Removing configuration files and binaries..."
@@ -38,11 +39,11 @@ rm -rf /etc/systemd/system/hysteria-server.service
 
 # --- STEP 3 ---
 echo -e "\n${LIGHT_BLUE_COLOR}[STEP 3/7]${NO_COLOR} Uninstalling 3x-ui panel..."
-if [ -f /usr/local/x-ui/bin/x-ui ]; then
-    /usr/local/x-ui/x-ui uninstall -s
-    rm -rf /usr/local/x-ui
-    rm -rf /etc/x-ui
-fi
+rm -rf /usr/local/x-ui
+rm -rf /etc/x-ui
+rm -f /usr/bin/x-ui
+rm -f /etc/systemd/system/x-ui.service
+systemctl daemon-reload 
 
 # --- STEP 4 ---
 echo -e "\n${LIGHT_BLUE_COLOR}[STEP 4/7]${NO_COLOR} Purging Docker containers and images..."
