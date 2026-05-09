@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-curl -sL https://raw.githubusercontent.com/artndev/shield-setup/master/install.sh | bash -s -- "<domain>" "<email>" "<bot-token>" "<group-id>" "<admin-id>"
+curl -sL -o install.sh https://raw.githubusercontent.com/artndev/shield-setup/master/install.sh && bash install.sh "<domain>" "<email>" "<bot-token>" "<group-id>" "<admin-id>" && rm install.sh
 ```
 
 ## Removal
