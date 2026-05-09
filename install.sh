@@ -17,9 +17,9 @@ echo " ██       ██   ██ ██ ██      ██      ██   █�
 echo "  █████   ███████ ██ █████   ██      ██   ██ "
 echo "       ██ ██   ██ ██ ██      ██      ██   ██ "
 echo "  ██████  ██   ██ ██ ███████ ███████ ██████  "
-echo -e "${LIGHT_BLUE_COLOR}v1.0 - Deployment Suite${NO_COLOR}"
+echo -e "${LIGHT_BLUE_COLOR}\nv1.0 - Deployment Suite${NO_COLOR}"
 echo -e "${RED_COLOR}==================================================${NO_COLOR}"
-echo -e "${LIGHT_BLUE_COLOR}    Starting installation...    ${NO_COLOR}"
+echo -e "${LIGHT_BLUE_COLOR}Starting installation...${NO_COLOR}"
 echo -e "${RED_COLOR}==================================================${NO_COLOR}"
 
 # Check args passed via curl
@@ -184,7 +184,7 @@ echo -e "\n${LIGHT_BLUE_COLOR}[STEP 12/12]${NO_COLOR} Cleaning up and generating
 
 # Final Output
 echo -e "\n${NAVY_COLOR}##################################################${NO_COLOR}"
-echo -e "${NAVY_COLOR}            SHIELD DEPLOYMENT HAS BEEN COMPLETED            ${NO_COLOR}"
+echo -e "${NAVY_COLOR}SHIELD DEPLOYMENT HAS BEEN COMPLETED${NO_COLOR}"
 echo -e "${NAVY_COLOR}##################################################${NO_COLOR}"
 
 echo -e "\n${GREEN_COLOR}=== 3x-ui Panel ===${NO_COLOR}"

@@ -17,9 +17,9 @@ echo " ██       ██   ██ ██ ██      ██      ██   █�
 echo "  █████   ███████ ██ █████   ██      ██   ██ "
 echo "       ██ ██   ██ ██ ██      ██      ██   ██ "
 echo "  ██████  ██   ██ ██ ███████ ███████ ██████  "
-echo -e "${LIGHT_BLUE_COLOR}v1.0 - Deployment Suite${NO_COLOR}"
+echo -e "${LIGHT_BLUE_COLOR}\nv1.0 - Deployment Suite${NO_COLOR}"
 echo -e "${RED_COLOR}==================================================${NO_COLOR}"
-echo -e "${LIGHT_BLUE_COLOR}    Starting system cleanup...     ${NO_COLOR}"
+echo -e "${LIGHT_BLUE_COLOR}Starting system cleanup...${NO_COLOR}"
 echo -e "${RED_COLOR}==================================================${NO_COLOR}"
 
 # --- STEP 1 ---
@@ -69,7 +69,7 @@ rm -rf /usr/local/go
 
 # FINAL REPORT
 echo -e "\n${RED_COLOR}##################################################${NO_COLOR}"
-echo -e "${RED_COLOR}            SHIELD HAS COMPLETELY BEEN REMOVED               ${NO_COLOR}"
+echo -e "${RED_COLOR}SHIELD HAS COMPLETELY BEEN REMOVED${NO_COLOR}"
 echo -e "${RED_COLOR}##################################################${NO_COLOR}"
 
 echo -e "\n${GREEN_COLOR}Cleanup is completed!${NO_COLOR}"
