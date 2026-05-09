@@ -56,9 +56,10 @@ stdbuf -oL bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/mast
 
 # --- STEP 3 ---
 echo -e "\n${LIGHT_BLUE_COLOR}[STEP 3/12]${NO_COLOR} Parsing credentials from 3x-ui logs..."
-export XUI_USER=$(sed 's/\x1b\[[0-9;]*m//g' x-ui.log | grep -i "Username:" | awk '{print $NF}')
-export XUI_PASS=$(sed 's/\x1b\[[0-9;]*m//g' x-ui.log | grep -i "Password:" | awk '{print $NF}')
-export XUI_URL=$(sed 's/\x1b\[[0-9;]*m//g' x-ui.log | grep -i "Access URL:" | awk '{print $NF}')
+sed -i 's/\x1b\[[0-9;]*m//g' x-ui.log
+export XUI_USER=$(grep -i "Username:" x-ui.log | awk '{print $NF}' | head -n 1)
+export XUI_PASS=$(grep -i "Password:" x-ui.log | awk '{print $NF}' | head -n 1)
+export XUI_URL=$(grep -i "Access URL:" x-ui.log | awk '{print $NF}' | head -n 1)
 rm -f x-ui.log
 
 # --- STEP 4 ---
@@ -205,5 +206,4 @@ echo -e "Port: $HYSTERIA_PORT"
 echo -e "URL: hy2://${HYSTERIA_USER}:${HYSTERIA_PASS}@${DOMAIN}:${HYSTERIA_PORT}?sni=${DOMAIN}&alpn=h3&insecure=0&allowInsecure=0#Hysteria2"
 
 echo -e "\n${NAVY_COLOR}=== MTProto Bot ===${NO_COLOR}"
-echo -e "Port: 9443"
-echo -e "===================\n"
+echo -e "Port: 9443\n"
