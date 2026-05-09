@@ -163,14 +163,16 @@ echo -e "\n${LIGHT_BLUE_COLOR}[STEP 10/12]${NO_COLOR} Deploying Telegram bot..."
 mkdir -p /root/projects/mtproto-util
 git clone https://github.com/artndev/mtproto-util.git /root/projects/mtproto-util
 
-cat <<EOF > /root/projects/mtproto-util/.env
+cd /root/projects/mtproto-util
+
+cat <<EOF > .env
 BOT_TOKEN=$BOT_TOKEN
 GROUP_ID=$BOT_GROUP_ID
 ADMIN_ID=$BOT_ADMIN_ID
 EOF
 
-chmod +x /root/projects/mtproto-util/deploy.sh
-/root/projects/mtproto-util/deploy.sh
+chmod +x deploy.sh
+./deploy.sh
 
 # --- STEP 11 ---
 echo -e "\n${LIGHT_BLUE_COLOR}[STEP 11/12]${NO_COLOR} Hardening system with firewall rules..."
